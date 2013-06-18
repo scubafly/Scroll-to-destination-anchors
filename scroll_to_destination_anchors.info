@@ -1,1 +1,7 @@
 name = Scroll to destination anchors
+description = Adds a script that will scroll users to anchor links instead of jumping them.
+package = User interface
+core = 7.x
+
+files[] = scrolltoanchors.module
+

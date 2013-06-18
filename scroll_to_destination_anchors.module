@@ -1,0 +1,17 @@
+<?php
+
+/**
+ * @file
+ * A module that scrolls users to anchor links.
+ *
+ * This module provides a script that scrolls users
+ * to anchor links instead of the default browser
+ * jump behavior.
+ */
+
+/**
+ * Implements hook_init().
+ */
+function scroll_to_destination_anchors_init() {
+	drupal_add_js(drupal_get_path('module', 'scroll_to_destination_anchors') .'/scroll_to_destination_anchors.js');
+}
