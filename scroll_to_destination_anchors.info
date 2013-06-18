@@ -3,4 +3,5 @@ description = Makes destination anchor links that start with a hashtag scroll us
 package = User interface
 core = 7.x
 
-files[] = scrolltoanchors.module
+files[] = scroll_to_destination_anchors.module
+ 
