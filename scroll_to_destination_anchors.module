@@ -23,6 +23,4 @@ function scroll_to_destination_anchors_help($path, $arg) {
 Scroll to destination anchors module</a>.", array('@scroll_to_destination_anchors' => 'https://drupal.org/sandbox/keeganhr/2022427')) . '</p>';
       return $output;
   }
-}
- 
-
+} 
