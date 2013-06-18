@@ -4,3 +4,4 @@ destination instead of the browser default jump behavior.
 
 **Installation:
 See the INSTALL.txt file.
+ 
