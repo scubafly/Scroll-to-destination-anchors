@@ -4,4 +4,3 @@ package = User interface
 core = 7.x
 
 files[] = scrolltoanchors.module
-
