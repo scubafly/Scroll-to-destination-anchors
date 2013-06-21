@@ -3,3 +3,4 @@ description = Makes destination anchor links that start with a hashtag scroll us
 package = User interface
 core = 7.x
  
+scripts[] = scroll_to_destination_anchors.js

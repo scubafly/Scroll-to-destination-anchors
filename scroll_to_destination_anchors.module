@@ -6,13 +6,6 @@
  */
 
 /**
- * Implements hook_init().
- */
-function scroll_to_destination_anchors_init() {
-  drupal_add_js(drupal_get_path('module', 'scroll_to_destination_anchors') . '/scroll_to_destination_anchors.js');
-}
-
-/**
  * Implements hook_help().
  */
 function scroll_to_destination_anchors_help($path, $arg) {
