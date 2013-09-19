@@ -16,15 +16,15 @@ Drupal.behaviors.scrolltoanchors = {
       $('a[href^="#"]').click(function(event) {
         event.preventDefault();
         var hrefValue = $(this).attr('href');
-        var hrefValueStripped = hrefValue.replace('#','');
+        var strippedHref = hrefValue.replace('#','');
         var heightDifference = $(document).height() - $(window).height();
         if (validateSelector(hrefValue)) {
           if ($(hrefValue).length > 0) {
             var linkOffset = $(this.hash).offset().top;
             scrollToDestination(linkOffset, heightDifference);
           }
-          else if ($('a[name=' + hrefValueStripped + ']').length > 0) {
-            var linkOffset = $('a[name=' + hrefValueStripped + ']').offset().top;
+          else if ($('a[name=' + strippedHref + ']').length > 0) {
+            var linkOffset = $('a[name=' + strippedHref + ']').offset().top;
             scrollToDestination(linkOffset, heightDifference);
           }
         }
