@@ -3,7 +3,7 @@ Drupal.behaviors.scrolltoanchors = {
   attach: function(context, settings) {
     $(document).ready(function(){
       function validateSelector(a) {
-        return /^#[a-z]{1}[a-z0-9_-]*$/i.test(a);
+        return a.indexOf('#') === 0;
       }
       function scrollToDestination(a,b) {
         if (a > b) {
