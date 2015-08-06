@@ -17,7 +17,6 @@ Drupal.behaviors.scrolltoanchors = {
         });
       }
       $('a[href^="#"]', context).click(function(event) {
-        event.preventDefault();
         var hrefValue = $(this).attr('href');
         var strippedHref = hrefValue.replace('#','');
         var heightDifference = $(document).height() - $(window).height();
@@ -30,8 +29,10 @@ Drupal.behaviors.scrolltoanchors = {
             var linkOffset = $('a[name=' + strippedHref + ']').offset().top;
             scrollToDestination(linkOffset, heightDifference);
           }
+          document.location.hash = strippedHref;
         }
       });
+      event.preventDefault();
     });
   }
 };
