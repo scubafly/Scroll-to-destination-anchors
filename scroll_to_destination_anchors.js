@@ -1,7 +1,7 @@
 (function($) {
 Drupal.behaviors.scrolltoanchors = {
   attach: function(context, settings) {
-    $(document).ready(function(){
+    $(window).load(function(){
       function validateSelector(a) {
         return a.indexOf('#') === 0;
       }
@@ -12,7 +12,7 @@ Drupal.behaviors.scrolltoanchors = {
           destination = a;
         }
         var movement = 'scroll mousedown DOMMouseScroll mousewheel keyup';
-        $('html, body').animate({scrollTop: destination}, 800, 'swing').bind(movement, function(){
+        $('html, body').animate({scrollTop: destination}, 500, 'swing').bind(movement, function(){
           $('html, body').stop();
         });
       }
