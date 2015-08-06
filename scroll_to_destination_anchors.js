@@ -5,13 +5,16 @@ Drupal.behaviors.scrolltoanchors = {
       function validateSelector(a) {
         return a.indexOf('#') === 0;
       }
-      function scrollToDestination(a,b) {
+      function scrollToDestination(a, b) {
         if (a > b) {
           destination = b;
         } else {
           destination = a;
         }
-        $('html,body').animate({ scrollTop: destination }, 800, 'swing');
+        var movement = 'scroll mousedown DOMMouseScroll mousewheel keyup';
+        $('html, body').animate({scrollTop: destination}, 800, 'swing').bind(movement, function(){
+          $('html, body').stop();
+        });
       }
       $('a[href^="#"]', context).click(function(event) {
         event.preventDefault();
