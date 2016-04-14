@@ -1,0 +1,6 @@
+scroll_to_destination_anchors:
+  js:
+    js/scroll_to_destination_anchors.js: {}
+  dependencies:
+      - core/jquery
+      - core/jquery.once

@@ -16,3 +16,10 @@ function scroll_to_destination_anchors_help($path, $arg) {
       return $output;
   }
 }
+
+/**
+ * Implements hook_page_attachments().
+ */
+function scroll_to_destination_anchors_page_attachments(array &$attachments) {
+  $attachments['#attached']['library'][] = 'scroll_to_destination_anchors/scroll_to_destination_anchors';
+}

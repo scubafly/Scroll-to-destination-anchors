@@ -8,10 +8,8 @@
 (function($) {
   Drupal.behaviors.scrolltoanchors = {
     attach: function(context, settings) {
-
       // Wait until after the window has loaded.
       $(window).load(function(){
-
         // Utility to check if a string is a valid selector.
         function validateSelector(a) {
           return /^#[a-z]{1}[a-z0-9_-]*$/i.test(a);
@@ -29,10 +27,9 @@
             $('html, body').stop();
           });
         }
-
+        console.log(context);
         // When a user clicks on a link that starts with a hashtag.
         $('a[href^="#"]', context).click(function(event) {
-
           // Store important values.
           var hrefValue = $(this).attr('href');
           var strippedHref = hrefValue.replace('#','');
