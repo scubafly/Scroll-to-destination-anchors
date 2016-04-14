@@ -27,7 +27,6 @@
             $('html, body').stop();
           });
         }
-        console.log(context);
         // When a user clicks on a link that starts with a hashtag.
         $('a[href^="#"]', context).click(function(event) {
           // Store important values.
