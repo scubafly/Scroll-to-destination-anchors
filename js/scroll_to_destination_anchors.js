@@ -27,19 +27,18 @@
             $('html, body').stop();
           });
         }
-        // When a user clicks on a link that starts with a hashtag.
-        $('a[href^="#"]', context).click(function(event) {
+        function interactionCallback(element, trigger, event) {
           // Store important values.
-          var hrefValue = $(this).attr('href');
-          var strippedHref = hrefValue.replace('#','');
+          var hrefValue = element.attr('href');
+          var strippedHref = hrefValue.split('#')[1];
+          var selector = '#' + strippedHref;
           var heightDifference = $(document).height() - $(window).height();
 
           // Make sure that the link value is a valid selector.
-          if (validateSelector(hrefValue)) {
-
+          if (validateSelector(selector)) {
             // Scroll users if there is an element with a corresponding id.
-            if ($(hrefValue).length > 0) {
-              var linkOffset = $(this.hash).offset().top;
+            if ($(selector).length > 0) {
+              var linkOffset = $(trigger.hash).offset().top;
               scrollToDestination(linkOffset, heightDifference);
             }
 
@@ -56,7 +55,14 @@
 
           // Prevent the event's default behavior.
           event.preventDefault();
-
+        }
+        // When a user clicks on a link that starts with a hashtag.
+        $('a[href^="#"]', context).click(function (event) {
+            interactionCallback($(this), this, event);
+        });
+        // When a user clicks on a link that starts with a hashtag on the current path.
+        $('a[href^="'+document.location.pathname+'#"', context).click(function (event) {
+            interactionCallback($(this), this, event);
         });
 
       });
