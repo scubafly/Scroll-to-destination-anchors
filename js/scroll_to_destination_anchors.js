@@ -9,7 +9,7 @@
   Drupal.behaviors.scrolltoanchors = {
     attach: function(context, settings) {
       // Wait until after the window has loaded.
-      $(window).load(function(){
+      $(window).on('load', function() {
         // Utility to check if a string is a valid selector.
         function validateSelector(a) {
           return /^#[a-z]{1}[a-z0-9_-]*$/i.test(a);
@@ -58,11 +58,11 @@
         }
         // When a user clicks on a link that starts with a hashtag.
         $('a[href^="#"]', context).click(function (event) {
-            interactionCallback($(this), this, event);
+          interactionCallback($(this), this, event);
         });
         // When a user clicks on a link that starts with a hashtag on the current path.
         $('a[href^="'+document.location.pathname+'#"', context).click(function (event) {
-            interactionCallback($(this), this, event);
+          interactionCallback($(this), this, event);
         });
 
       });
